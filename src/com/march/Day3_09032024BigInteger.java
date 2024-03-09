@@ -10,8 +10,14 @@ class FactorBigInt {
 	public void factorListBig(BigInteger n) {
 		
 		for (BigInteger i = BigInteger.ONE; i.compareTo(n) <= 0; i = i.add(BigInteger.ONE)) {
+			
+			System.out.println(".");
+			System.out.println("..");
+			System.out.println("...");
+			
 			if(n.mod(i).equals(BigInteger.ZERO)) {
 				System.out.println(i);
+				
 				if(p.primeCheckBig(i)) {
 					System.out.println(i + " is prime");
 				}
@@ -30,7 +36,7 @@ class PrimeCheckBigInt {
 		
 		BigInteger two = BigInteger.valueOf(2);
 		
-		for (BigInteger i = two; i.compareTo(numToCheck) <= 0; i = i.add(BigInteger.ONE)) {
+		for (BigInteger i = two; i.compareTo(numToCheck) < 0; i = i.add(BigInteger.ONE)) {
 			if (numToCheck.mod(i).equals(BigInteger.ZERO)) {
 				return false;
 			}

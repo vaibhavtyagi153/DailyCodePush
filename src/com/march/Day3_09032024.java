@@ -56,7 +56,7 @@ public class Day3_09032024 {
 
 	public static void main(String[] args) {
 		
-		int num = 20;
+		int num = 13195;
 		//BigInteger bignum = BigInteger.valueOf(600851475143);
 		
 		Factors f = new Factors();
