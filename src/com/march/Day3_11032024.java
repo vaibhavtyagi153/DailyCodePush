@@ -26,6 +26,11 @@ class PalindromeChecks {
 	}
 	
 	
+	public void nextIntPalindrome(int n) {
+		String str = String.valueOf(n);
+		palindromStringCheck(str);
+	}
+	
 	public String reverse(String s) {
 		String reverse = "";
 		
@@ -68,6 +73,8 @@ public class Day3_11032024 {
 		p.palindromStringCheck(inputString);
 		
 		System.out.println("Ending the code");
+		
+		p.nextIntPalindrome(323);
 		
 		
 		
