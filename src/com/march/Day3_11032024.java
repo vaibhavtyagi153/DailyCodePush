@@ -13,23 +13,43 @@ import java.io.IOException;
 
 class PalindromeChecks {
 	
-	public void palindromStringCheck(String s) {
-		//removing whitespaces
+	public boolean palindromStringCheck(String s) {
+		//removing whitespaces and LowerCase scenario
 		String s1 = s.replaceAll("\\s+", "").toLowerCase();
-		System.out.println("Value of s1: " +  s1);
 		String revS = reverse(s1);
 		if(revS.equals(s1)) {
-			System.out.println("Match");
+			return true;
 		} else {
-			System.out.println("noMatch");
+			return false;
 		}
 	}
 	
 	
-	public void nextIntPalindrome(int n) {
+	public boolean intPalindromeCheck(int n) {
 		String str = String.valueOf(n);
-		palindromStringCheck(str);
+		if(palindromStringCheck(str)) {
+			return true;
+		} else {
+			return false;
+		}
+		
+		
 	}
+	
+	public int nextIntPalindrome(int n) {
+		
+		while(true) {
+			
+			n++;
+			if(intPalindromeCheck(n)) {
+				break;
+			} 
+			
+		}
+		return n;
+	}
+	
+
 	
 	public String reverse(String s) {
 		String reverse = "";
@@ -48,36 +68,60 @@ public class Day3_11032024 {
 
 	public static void main(String[] args) {
 		
-		String inputString = "";
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		
-		System.out.println("Enter a String: ");
-		
-		try {
-			inputString = reader.readLine();
-			
-			System.out.println("You entered: " + inputString);
-			
-		} catch(IOException e) {
-			System.out.println("Error Occured during reading input: " + e.getMessage());
-		} finally {
-			try {
-				reader.close();
-			} catch(IOException e) {
-				System.out.println("Error encounterd while closing reader: " + e.getMessage());
-			}
-		}
+//		String inputString = "";
+//		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//		
+//		System.out.println("Enter a String: ");
+//		
+//		try {
+//			inputString = reader.readLine();
+//			
+//			System.out.println("You entered: " + inputString);
+//			
+//		} catch(IOException e) {
+//			System.out.println("Error Occured during reading input: " + e.getMessage());
+//		} finally {
+//			try {
+//				reader.close();
+//			} catch(IOException e) {
+//				System.out.println("Error encounterd while closing reader: " + e.getMessage());
+//			}
+//		}
 		
 		PalindromeChecks p = new PalindromeChecks();
 		
-		p.palindromStringCheck(inputString);
+//		boolean b = p.palindromStringCheck(inputString);
+//		displayResult(inputString, b);
 		
-		System.out.println("Ending the code");
+		int i1= 411;
+//		boolean a = p.intPalindromeCheck(i1);
+//		displayResult(i1, a);
 		
-		p.nextIntPalindrome(323);
+		int a1 = p.nextIntPalindrome(i1);
+		displayResult(a1);
 		
 		
+	}
+	
+	public static void displayResult(String s, boolean b) {
+		if (b) {
+			System.out.println(s + " is Palindrome");
+		} else {
+			System.out.println(s + " is not Palindrome");
+		}
+	}
+	
+	public static void displayResult(int i, boolean b) {
+		if (b) {
+			System.out.println(i + " is palindrome");
+		} else {
+			System.out.println(i + " is not Palindrome");
+		}
+	}
+	
+	public static void displayResult(int i) {
 		
+		System.out.println(i + " is palindrome");
 	}
 
 }
