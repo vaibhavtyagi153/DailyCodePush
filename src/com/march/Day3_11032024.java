@@ -14,9 +14,11 @@ import java.io.IOException;
 class PalindromeChecks {
 	
 	public void palindromStringCheck(String s) {
-		
-		String revS = reverse(s);
-		if(revS.equals(s)) {
+		//removing whitespaces
+		String s1 = s.replaceAll("\\s+", "").toLowerCase();
+		System.out.println("Value of s1: " +  s1);
+		String revS = reverse(s1);
+		if(revS.equals(s1)) {
 			System.out.println("Match");
 		} else {
 			System.out.println("noMatch");
