@@ -84,7 +84,7 @@ public class Day3_11032024 {
 //			try {
 //				reader.close();
 //			} catch(IOException e) {
-//				System.out.println("Error encounterd while closing reader: " + e.getMessage());
+//				System.out.println("Error encountered while closing reader: " + e.getMessage());
 //			}
 //		}
 		
