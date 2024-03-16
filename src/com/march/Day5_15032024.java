@@ -30,27 +30,30 @@ public class Day5_15032024 {
 	public static void main(String[] args) {
 		
 		PalindromeEU e = new PalindromeEU();
+		int k = 0;
+		int p = 0;
 		
-		int biggestPalindrome = 580085;
+		int biggestPalindrome = 0;
 		
 		outerLoop:
 		for (int i = 999; i >= 100; i--) {
 			for (int j = 999; j >= 100; j--) {
+				k = i;
+				p = j;
 				//System.out.println(i + " " + j);
 				int testPass = i * j;
-				if (e.revAndIntCheck(testPass) && testPass > biggestPalindrome) {
+				if (e.revAndIntCheck(testPass)) {
 					
-					System.out.println("this is ok");
-					System.out.println(i + " " + j);
-					System.out.println("this is fine");
-					System.out.println(testPass + " is Palindrome");
-					break outerLoop;
+					if (testPass > biggestPalindrome) {
+						biggestPalindrome = testPass;
+					}
 				}
 			}
 		}
+		System.out.println(biggestPalindrome);
 		
 		
-		PalindromeChecks p_obj = new PalindromeChecks();
+		//PalindromeChecks p_obj = new PalindromeChecks();
 		
 		//following not running properly
 		//100 to 999
